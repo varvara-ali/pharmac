@@ -5,11 +5,11 @@ import os
 from start3 import Start_screen
 
 
-class MapParams(object):
+class MapParams(object, coord, scale):
     def __init__(self):
-        self.lat = 61.665279
-        self.lon = 50.813492
-        self.zoom = 16
+        self.lat = coord[0]
+        self.lon = coord[1]
+        self.zoom = scale
         self.type = "map"
 
     def ll(self):
@@ -78,3 +78,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    mp = MapParams()
