@@ -5,8 +5,8 @@ import os
 from start3 import Start_screen
 
 
-class MapParams(object, coord, scale):
-    def __init__(self):
+class MapParams:
+    def __init__(self, coord, scale):
         self.lat = coord[0]
         self.lon = coord[1]
         self.zoom = scale
@@ -37,13 +37,13 @@ def load_map(mp):
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode(800, 1000)
+    screen = pygame.display.set_mode((800, 1000))
     clock = pygame.time.Clock()
 
     background_color = 'white'
     fps = 60
 
-    mp = MapParams()
+    mp = MapParams((61.665279, 50.813492), 16)
     running = True
     while running:
         event = pygame.event.wait()
@@ -78,4 +78,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    mp = MapParams()
